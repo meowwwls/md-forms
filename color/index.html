@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Fundamentals Project 5: Forms - Color Range Input Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Arimo:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/md-showcase/css/back-home.css">
+  <link rel="stylesheet" href="css/color-styles.css">
+</head>
+<body>
+  <header class="back-home">
+   <p><a href="../index.html">Back to Forms Index</a></p>
+   </header>
+  <div class="wrapper">
+    <section id="color-box">
+      <h2>Generated Color</h2>
+    </section>
+    <section class="range-inputs">
+      <h2 class="visuallyhidden">Range Inputs for Red, Green, Blue and Alpha</h2>
+      <div class="box">
+        <label for="red" class="slider-label"><span aria-hidden="true">R</span><span class="visuallyhidden" id="red-name">Red</span></label>
+        <input type="range" name="red" step="5" min="0" max="255" id="red" value="165" aria-describedby="red-name" />
+        <span class="output" id="redout">165</span>
+      </div>
+      <div class="box">
+        <label for="green" class="slider-label"><span aria-hidden="true">G</span><span class="visuallyhidden" id="green-name">Green</span></label>
+        <input type="range" name="green" step="5" min="0" max="255" id="green" value="110" aria-describedby="green-name" />
+        <span class="output" id="greenout">110</span>
+      </div>
+      <div class="box">
+        <label for="blue" class="slider-label">
+        <span aria-hidden="true">B</span><span class="visuallyhidden" id="blue-name">Blue</span></label>
+        <input type="range" name="blue" step="5" min="0" max="255" id="blue" value="190" aria-describedby="blue-name" />
+        <span class="output" id="blueout">190</span>
+      </div>
+      <div class="box">
+        <label for="alpha" class="slider-label">
+        <span aria-hidden="true">A</span><span class="visuallyhidden" id="alpha-name">Alpha</span></label>
+        <input type="range" name="alpha" step="0.01" min="0" max="1" id="alpha" value="0.94" aria-describedby="alpha-name" />
+        <span class="output" id="alphaout">0.94</span>
+      </div>
+    </section>
+    <section class="outcome">
+      <h2 class="visuallyhidden">RGB and HEX Values</h2>
+      <p><label for="rgba" class="output-label">RGBA:</label><input type="text" id="rgba" class="value-output" value="rgba(165, 110, 190, 0.94)
+  "></p>
+      <p><label for="hex" class="output-label">HEX:</label><input type="text" id="hex" class="value-output" value="#a56ebe"></p>
+    </section>
+  </div>
+</body>
+</html>
