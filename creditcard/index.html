@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Web Fundamentals Project 5: Forms - Credit Card Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/md-showcase/css/back-home.css">
+  <link rel="stylesheet" href="css/credit-form.css">
+</head>
+
+<body>
+  <header class="back-home">
+     <p><a href="../index.html">Back to Forms Index</a></p>
+  </header>
+  <div class="page-wrap">
+    <div class="container">
+      <p class="breadcrumbs">Shipping and Billing Address / <span class="current-page">Payment Information</span> / Review Order / Submit Order</p>
+
+      <form action="" method="POST" name="credit-informarion">
+
+        <!-- full name row -->
+        <div class="row">
+          <p class="wrap name-wrap">
+            <label for="cardholder">Cardholder's Full Name:</label>
+            <input type="text" name="cardholder-name" id="cardholder" placeholder="First M.I. Last" required></p>
+        </div>
+        <!-- card number row-->
+
+        <div class="row">
+          <p class="wrap"><label for="cardnum">Card Number:</label>
+            <input type="text" name="card-number" placeholder="xxxx xxxx xxxx xxxx" required maxlength="19" size="19" id="cardnum">
+          </p>
+          <p class="wrap cvc-wrap">
+            <label for="cvc">CVC Code:</label>
+            <input type="text" name="cvc" placeholder="xxx" required maxlength="3" size="3" id="cvc" aria-describedby="cvc-desc">
+            <span class="cvc-info" id="cvc-desc">A <strong>CVC code</strong> is a 3-digit code on the back of your credit or debit card</span>
+          </p>
+        </div>
+
+        <!-- select row-->
+
+        <div class="row exp-row">
+          <p class="wrap exp-wrap">
+            <label for="exp-month">Expiration Month:</label>
+            <span class="select-wrap month-wrap">
+            <select name="exp-month" id="exp-month" required="">
+            <option value="01">01 - Jan</option>
+            <option value="02">02 - Feb</option>
+            <option value="03">03 - Mar</option>
+            <option value="04">04 - Apr</option>
+            <option value="05">05 - May</option>
+            <option value="06">06 - Jun</option>
+            <option value="07">07 - Jul</option>
+            <option value="08">08 - Aug</option>
+            <option value="09">09 - Sep</option>
+            <option value="10">10 - Oct</option>
+            <option value="11">11 - Nov</option>
+            <option value="12">12 - Dec</option>
+            </select></span></p>
+          <p class="wrap exp-wrap">
+            <label for="exp-year">Expiration Year:</label>
+            <span class="select-wrap year-wrap">
+            <select name="expiration-year" id="exp-year" required="">
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+            <option value="2028">2028</option>
+            <option value="2029">2029</option>
+            <option value="2030">2030</option>
+            <option value="2031">2031</option>
+          </select></span>
+          </p>
+        </div>
+        <p class="submit-wrap">
+          <button class="btn">Submit Payment and Review Order</button>
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

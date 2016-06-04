@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Fundamentals Project 5: Forms – Login Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="/md-showcase/css/back-home.css">
+    <link rel="stylesheet" href="css/login-form.css">
+  </head>
+  <body>
+    <header class="back-home">
+       <p><a href="../index.html">Back to Forms Index</a></p>
+    </header>
+    <div class="wrap">
+      <div class="colorbar"></div>
+      <section class="container">
+        <form action="" method="POST" name="login">
+          <h1>Sign In <span class="login-break">to Your Account</span></h1>
+          <div class="input_wrap">
+            <input type="email" id="email" name="email" placeholder="ex. janet@snakehole.com" required>
+            <label for="email">e-mail</label>
+          </div>
+          <div class="input_wrap">
+            <input type="password" id="password" name="password" required>
+            <label for="password">password</label>
+          </div>
+          <p><em>All fields are required</em></p>
+          <div class="input_wrap check_wrap">
+            <input type="checkbox" id="staylogged" name="stayloggedin" /><label for="staylogged">Stay logged in</label>
+          </div>
+          <div class="input_wrap login_wrap">
+            <button class="login_btn">Log In</button>
+          </div>
+          <footer class="input_wrap form_footer">
+          <p>Not a member? <a href="#">Register!</a></p>
+          <p><a href="#">Forgot Your Password?</a></p>
+          </footer>
+        </form>
+      </section> 
+  </div> 
+  </body>
+</html>

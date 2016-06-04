@@ -1,0 +1,290 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: #f4f4f4;
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.colorbar {
+  max-width: 25rem;
+  margin: auto;
+  height: 15px;
+  background: -webkit-linear-gradient(left, #f4c1b3 0%, #f4c1b3 33%, #cfcbc2 33%, #cfcbc2 66%, #222 66%, #222 100%);
+  background: linear-gradient(to right, #f4c1b3 0%, #f4c1b3 33%, #cfcbc2 33%, #cfcbc2 66%, #222 66%, #222 100%);
+  background-size: 50% 100%;
+  background-repeat: repeat no-repeat;
+}
+
+h1 {
+  text-align: center;
+  line-height: 1.25;
+  margin-top: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+.wrap {
+  position: relative;
+  height: 100%;
+}
+.container {
+  width: 80%;
+  max-width: 30rem;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border: 1px solid #222;
+  box-shadow: 0 0 0 1rem white;
+}
+
+form {
+  width: 100%;
+  max-width: 20rem;
+  margin: 3em auto 1em;
+}
+
+.input_wrap {
+  position: relative;
+  margin: 2em 0 1em;
+}
+
+
+form a,
+form a:link,
+form a:visited {
+  color: #ef9f89;
+  font-weight: bold;
+}
+
+form a:hover,
+form a:active,
+form a:focus {
+  color: #222;
+}
+
+input {
+  height: 3rem;
+  width: 100%;
+  padding-left: 38%;
+  color: #333;
+  letter-spacing: 1px;
+  border: 1px solid #ef9f89;
+  -webkit-transition: padding-left 0.3s ease;
+  transition: padding-left 0.3s ease;
+}
+
+input::-webkit-input-placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+input::-moz-placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+input:-ms-input-placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+input::placeholder {
+  color: #777;
+  font-style: italic;
+}
+
+input:focus,
+.login_btn:focus,
+.login_btn:hover {
+  outline: 0;
+}
+
+input:not([type="checkbox"]) + label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  height: 100%;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  color: black;
+  line-height: 3rem;
+  text-transform: uppercase;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+.login-break {
+  display: block;
+  font-size: 1.2rem;
+}
+
+input:not([type="checkbox"]):focus,
+input:not([type="checkbox"]):valid {
+  padding-left: 0.5em;
+  border-color: #222;
+}
+
+input:not([type="checkbox"]):focus + label,
+input:not([type="checkbox"]):valid + label {
+  padding-bottom: 0;
+  margin: 0 0 0.5em 0.25em;
+  background: white;
+  -webkit-transform: translate(0, -50%) scale(0.75);
+          transform: translate(0, -50%) scale(0.75);
+
+}
+
+/*checkbox and checkbox label styles*/
+
+input[type="checkbox"] {
+  width: auto;
+  margin-top: 0;
+  padding: 0;
+  margin-right: 50%;
+}
+
+input[type="checkbox"] + label {
+  right: 4%;
+  text-transform: uppercase;
+
+}
+
+input[type="checkbox"] + label {
+  position: relative;
+  margin-left: 0.5em;
+}
+
+/*hide checkbox but keep it accessible*/
+
+input[type="checkbox"] {
+  opacity: 0;
+}
+
+/*custom checkbox style*/
+
+input[type="checkbox"] + label::after {
+  content: '';
+  position: absolute;
+  width: 1em;
+  height: 1em;
+  left: -1.5em;
+  top: 0;
+  border: 1px solid #ef9f89;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+
+input[type="checkbox"]:focus + label {
+  border-color: #222;
+  padding-bottom: 0.25rem;
+  border-bottom: 5px solid #222;
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: '';
+  position: absolute;
+  background: #ef9f89;
+}
+
+.check_wrap {
+  margin-top: 0;
+  text-align: right;
+  transform: translateY(-10%);
+}
+
+.input_wrap.login_wrap {
+  text-align: center;
+}
+
+.login_btn {
+  min-width: 50%;
+  padding: 0.75rem 1.5rem;
+  background: #222;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.login_btn:focus,
+.login_btn:hover {
+  background: #f4c1b3;
+  color: #222;
+}
+
+.login_btn:active {
+  -webkit-transform: translateY(5%);
+          transform: translateY(5%);
+}
+
+.form_footer {
+  text-align: center;
+}
+
+.form_footer p {
+  margin: 0.35em 0 0;
+}
+
+.form_footer a {
+  text-decoration: none;
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid;
+}
+
+@media screen and (max-width: 470px) {
+  body {
+    background: white;
+  }
+  .container {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: white;
+    border: none;
+    box-shadow: none;
+  }
+  input {
+    padding-left: 0.5em;
+    background: white;
+  }
+  input + label {
+    background: white;
+    -webkit-transform: translate(0, -50%) scale(0.75);
+            transform: translate(0, -50%) scale(0.75);
+    padding-bottom: 0;
+    margin: 0 0 0.5em 0.25em;
+  }
+  input[type="checkbox"] {
+    display: block;
+  }
+  input:focus + label {
+    font-style: italic;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 700px) and (min-height: 700px) {
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Fundamentals Project 5: Forms – Registration Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/md-showcase/css/back-home.css">
+    <link rel="stylesheet" href="css/signup-style.css"> 
+  </head>
+  <body>
+    <section class="back-home">
+       <p><a href="../index.html">Back to Forms Index</a></p>
+    </section>
+    <div class="wrap">
+      <div class="box cf">
+        <header class="form-header">
+          <div class="header-text">
+            <h1>Register Today</h1>
+            <p class="header-p">For Full Access to Hundreds of Books</p>
+          </div>
+        </header>
+        <form action="" class="form-body">
+          <fieldset>
+            <legend>About You</legend>
+            <p class="input-wrap">
+              <input type="text" name="full-name" id="full-name" />
+              <label for="full-name">
+                  First and Last Name
+                </label>
+            </p>
+            <p class="input-wrap">
+              <input type="date" name="dob" id="dob" placeholder="mm/dd/yyyy" aria-describedby="dob-format" />
+              <label for="dob">Date of Birth
+                </label>
+                <span class="visuallyhidden" id="dob-format">Date of birth should be provided in the format mm/dd/yyyy</span>
+            </p>
+          </fieldset>
+          <fieldset>
+            <legend>Account Information</legend>
+            <p class="input-wrap">
+              <input type="email" name="email" id="email" required placeholder="you@example.com" />
+              <label for="email">
+            E-mail Address
+          </label>
+            </p>
+            <p class="input-wrap">
+              <input type="password" name="password" id="password" required />
+              <label for="password">
+            Password
+          </label>
+            </p>
+            <p class="input-wrap">
+              <input type="password" name="password-con" id="password-con" required />
+              <label for="password-con">
+            Confirm Password
+          </label>
+            </p>
+          </fieldset>
+          <p class="submit-wrap">
+            <button class="btn">Register!</button>
+          </p>
+        </form>
+      </div>    
+    </div>
+  </body>
+</html>

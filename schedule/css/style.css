@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: #e7ecee;
+  position: relative;
+  color: #767676;
+  font-family: 'Roboto', sans-serif;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+form {
+  max-width: 40rem;
+  padding-bottom: 2rem;
+  margin: auto;
+  background: #fff;
+  font-size: 0;
+}
+
+fieldset {
+  max-width: 35rem;
+  padding: 1rem;
+  margin: 1rem auto;
+  font-size: 1rem;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+legend {
+  font-size: 1.2rem;
+  font-style: italic;
+  font-family: 'Libre Baskerville', serif;
+}
+
+h1 {
+  margin: 0 0 2rem;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;  
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #2b2b2b;
+}
+
+.green-letter {
+  color: #00afb9;
+}
+
+.row {
+  margin: auto;
+}
+
+.inp-wrap {
+  max-width:35rem;
+  padding: 1rem;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-size: 1rem;
+}
+
+.row::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+  color: #2b2b2b;
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+input {
+  display: inline-block;
+  width: 100%;
+  max-width: 15rem;
+  min-height: 3.2rem;
+  padding: 0.75rem 0 0.75rem 0.75rem;
+  font-weight: 300;
+  background-color: #f3ce13;
+  border: 0;
+}
+
+.date-inp {
+  text-align: center;
+  padding-left: 3rem;
+  background-image: url("http://res.cloudinary.com/meowwwls/image/upload/v1462908671/md-projects/icons/calendar.svg");
+  background-repeat: no-repeat;
+  background-size: 1.875rem;
+  background-position: 1rem center;
+}
+
+.time-inp {
+  text-align: center;
+  padding-left: 3rem;
+  background-image: url("http://res.cloudinary.com/meowwwls/image/upload/v1462907978/md-projects/icons/clock.svg");
+  background-repeat: no-repeat;
+  background-size: 1.875rem;
+  background-position: 1rem center;
+}
+
+.select-wrap {
+  max-width: 35rem;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: 1rem 3rem 1rem 0.5rem;
+  background: #f3ce13;
+  border: 0;
+}
+
+.select-arrow {
+  position: relative;
+  display: inline-block;
+}
+
+.select-arrow::after {
+  content: '';
+  position: absolute;
+  right: 5%;
+  top: 40%;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: #666 transparent transparent;
+  border-width: 0.75rem 0.5rem 0 0.5rem;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem 1rem 0;
+  border: 0;
+  background: #f3ce13;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+  outline: 0;
+  background-color: #F9FFF2;
+  box-shadow: 0 0.4rem 0 #00afb9;
+}
+
+input, 
+select,
+button,
+textarea {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.inp-wrap.submit {
+  text-align: center;
+}
+
+.submit button {
+  width: 100%;
+  max-width: 30rem;
+  padding: 1rem;
+  background: transparent;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border: 0.25rem solid #767676;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submit button:hover,
+.submit button:focus {
+  outline: 0;
+  color: #fff;
+  background: #00afb9;
+  border-color: #00afb9;
+}
+
+.submit button:active {
+  background: transparent;
+  color: #2b2b2b;
+  border: 0.25rem solid #767676;
+  transform: translateY(4px);
+}
+
+::-webkit-input-placeholder { 
+  color: #767676;
+}
+::-moz-placeholder { 
+  color: #767676;
+}
+:-ms-input-placeholder { 
+  color: #767676;
+}
+:-moz-placeholder { 
+  color: #767676;
+}
+
+@media screen and (min-width: 410px) {
+  form {
+    margin: 2rem auto;
+  }
+  .row .inp-wrap,
+  .contact .inp-wrap {
+    width: 50%;
+    float: left;
+  }
+}
+
+@media screen and (min-width: 26rem) and (min-height: 60rem) {
+  form {
+    margin: 0;
+    position: absolute;
+    width: 100%;
+    max-width: 34rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input:focus::-webkit-input-placeholder { 
+  color: #767676;
+}
+input:focus::-moz-placeholder { 
+  color: #767676;
+}
+input:focus:-ms-input-placeholder { 
+  color: #767676;
+}
+input:focus:-moz-placeholder { 
+  color: #767676;
+}

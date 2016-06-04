@@ -1,0 +1,326 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: 'Arimo', sans-serif;
+}
+
+
+/* range styles by Brenna O'Brien http://brennaobrien.com/blog/2014/05/style-input-type-range-in-every-browser.html */
+
+input[type=range] {
+  /*removes default webkit styles*/
+  vertical-align: middle;
+  -webkit-appearance: none;
+  /*fix for FF unable to apply focus style bug */
+  border: 1px solid white;
+  /*required for proper track sizing in FF*/
+  width: 12.5rem;
+  display: inline-block;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 12.5rem;
+  height: 0.4rem;
+  background: #ccc;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  margin-top: -4px;
+}
+
+#red::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #f9423a;
+}
+
+#green::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #43b02a;
+}
+
+#blue::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #246fcc;
+}
+
+#alpha::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: #333;
+}
+
+input[type=range]:focus {
+  outline: 1px solid #717171;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+  width: 12.5rem;
+  height: 0.4rem;
+  background: #ccc;
+  border: none;
+  border-radius: 3px;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: none;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}
+
+#red::-moz-range-thumb {
+  background: #f9423a;
+}
+
+#green::-moz-range-thumb {
+  background: #43b02a;
+}
+
+#blue::-moz-range-thumb {
+  background: #246fcc;
+}
+
+#alpha::-moz-range-thumb {
+  background: #333;
+}
+
+
+/*hide the outline behind the border*/
+
+input[type=range]:-moz-focusring {
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+
+input[type=range]::-ms-track {
+  width: 12.5rem;
+  height: 0.4rem;
+  /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+  background: transparent;
+  /*leave room for the larger thumb to overflow with a transparent border */
+  border-color: transparent;
+  border-width: 6px 0;
+  /*remove default tick marks*/
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #777;
+  border-radius: 10px;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+input[type=range]::-ms-thumb {
+  border: none;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}
+
+#red::-ms-thumb {
+  background: #f9423a;
+}
+
+#green::-ms-thumb {
+  background: #43b02a;
+}
+
+#blue::-ms-thumb {
+  background: #246fcc;
+}
+
+#alpha::-ms-thumb {
+  background: #246fcc;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #888;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #ccc;
+}
+
+input:focus {
+  outline: 1px solid;
+}
+
+label,
+input[type="range"] {
+  cursor: pointer;
+}
+
+
+/* custom styles */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.wrapper {
+  max-width: 32rem;
+  margin: auto;
+}
+
+#color-box {
+  background-color: #a56ebe;
+  position: relative;
+  height: 15rem;
+}
+
+#color-box h2 {
+  margin: 0;
+  padding: 0.5em 1em;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #272727;
+  color: #ededed;
+  font-size: 1rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* range box styles*/
+
+.box {
+  margin: 2rem;
+  width: 100%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+label,
+.output {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.slider-label,
+.output {
+  font-size: 1.2rem;
+  float: right;
+}
+
+.slider-label {
+  float: left;
+  font-weight: bold;
+}
+
+.range-inputs {
+  width: 100%;
+  max-width: 18rem;
+  margin: auto;
+}
+
+
+/* output styles */
+
+.outcome {
+  padding: 1rem 1rem 2rem;
+  color: #717171;
+  background: #f6f6f6;
+}
+
+.outcome p {
+  font-size: 1.1rem;
+  max-width: 23rem;
+  margin: 0.5em auto 0;
+}
+
+.outcome p::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.output-label {
+  font-weight: bold;
+  vertical-align: bottom;
+  padding: 1rem 0.5rem 0;
+}
+
+.value-output {
+  border: 0;
+  float: right;
+  border-bottom: 3px solid #717171;
+  background: transparent;
+  margin-left: 1rem;
+  padding: 0.5em;
+}
+
+.value-output:focus {
+  outline: 1px dotted;
+  border-color: #a56ebe;
+}
+
+@media screen and (min-width: 29rem) {
+  .wrapper {
+    max-width: 32rem;
+    padding: 1rem 2rem;
+    margin: 1rem auto;
+    border: 2px solid #eee;
+  }
+  .outcome {
+    border-top: 1px solid;
+    background: #fff;
+  }
+}
+
+@media screen and (min-width: 29rem) and (min-height: 56rem) {
+  .wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 32rem;
+    padding: 1rem 2rem;
+    border: 2px solid #eee;
+  }
+}
