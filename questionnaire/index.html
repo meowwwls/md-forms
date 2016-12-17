@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Web Fundamentals Project 5: Forms – Questionnaire Form</title>
-  <link href='https://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Cardo' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="/md-showcase/css/back-home.css">
   <link rel="stylesheet" href="css/poll-styles.css">
 </head>
@@ -16,7 +14,7 @@
  <div class="page-wrap">
    <section class="form-wrap">
      <h1>In the CSS Course, I'm <span>Most Excited to Learn:</span></h1>
-     <form name="exciting-css" action="" method="POST">
+     <form name="exciting-css" action="" method="POST" id="survey-form">
        <p class="wrap">
          <!-- I set the first input to be checked by default because the spec suggests this, to indicate to the user that it is a radio button
       
@@ -38,14 +36,17 @@
        <p class="wrap">
          <input type="radio" name="learning-topic" value="other" id="other">
          <label for="other" class="radio-label">Other</label>
-         <label for="other-inp" class="other-label">If "other", please specify:</label>
+         <label for="other-inp" class="other-label">If “other”, please specify:</label>
          <input type="text" name="css-other" id="other-inp" placeholder="e.g. grid layout">
+         <span class="invalid-msg"></span>
        </p>
        <p class="wrap">
-        <button class="submit-btn">Submit</button>
+        <button class="submit-btn" id="submit">Submit</button>
       </p>
      </form>
    </section>
+   <script src="../js/validator.js"></script>
+   <script src="js/survey-script.js"></script>
  </div>
 </body>
 </html>

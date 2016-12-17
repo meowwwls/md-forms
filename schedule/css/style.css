@@ -167,6 +167,7 @@ textarea {
   background: #f3ce13;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  line-height: 1.4;
 }
 
 textarea:focus,
@@ -228,6 +229,50 @@ textarea {
 }
 :-moz-placeholder { 
   color: #767676;
+}
+
+/* invalid input styles */
+
+.invalid-msg {
+  display: none;
+  position: relative;
+  max-width: 31rem;
+  padding: 0.5rem 0.75rem;
+  margin: -0.5rem auto 0;
+  background-color: #00afb9;
+  line-height: 1.4;
+  color: #fefefe;
+  border-radius: 0.25rem;
+}
+
+.invalid-msg::after {
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border-style: solid;
+  border-color: transparent transparent #00afb9;
+
+}
+
+#time-row + .invalid-msg::after {
+  border-width: 0 1rem 1.25rem;
+  top: -1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#phone ~ .invalid-msg,
+#email ~ .invalid-msg {
+  max-width: 15rem;
+  margin: 0;
+}
+
+#phone ~ .invalid-msg::after,
+#email ~ .invalid-msg::after {
+  border-width: 0 0.75rem 1rem;
+  top: -1rem;
+  right: 1.75rem;
 }
 
 @media screen and (min-width: 410px) {
