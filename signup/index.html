@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <title>Web Fundamentals Project 5: Forms – Registration Form</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/md-showcase/css/back-home.css">
     <link rel="stylesheet" href="css/signup-style.css"> 
   </head>
@@ -21,20 +19,23 @@
             <p class="header-p">For Full Access to Hundreds of Books</p>
           </div>
         </header>
-        <form action="" class="form-body">
+        <form action="" method="POST" id="signup-form" class="form-body">
           <fieldset>
             <legend>About You</legend>
             <p class="input-wrap">
-              <input type="text" name="full-name" id="full-name" />
+              <input type="text" name="full-name" id="full-name"/>
               <label for="full-name">
-                  First and Last Name
-                </label>
+                First and Last Name
+              </label>
+              <span class="invalid-msg"></span>
             </p>
             <p class="input-wrap">
               <input type="date" name="dob" id="dob" placeholder="mm/dd/yyyy" aria-describedby="dob-format" />
-              <label for="dob">Date of Birth
-                </label>
-                <span class="visuallyhidden" id="dob-format">Date of birth should be provided in the format mm/dd/yyyy</span>
+              <label for="dob">
+                Date of Birth
+              </label>
+              <span class="visuallyhidden" id="dob-format">Date of birth should be provided in the format mm/dd/yyyy</span>
+              <span class="invalid-msg"></span>
             </p>
           </fieldset>
           <fieldset>
@@ -42,27 +43,32 @@
             <p class="input-wrap">
               <input type="email" name="email" id="email" required placeholder="you@example.com" />
               <label for="email">
-            E-mail Address
-          </label>
+                E-mail Address
+              </label>
+              <span class="invalid-msg"></span>
             </p>
             <p class="input-wrap">
               <input type="password" name="password" id="password" required />
               <label for="password">
-            Password
-          </label>
+                Password
+              </label>
+              <span class="invalid-msg"></span>
             </p>
             <p class="input-wrap">
               <input type="password" name="password-con" id="password-con" required />
               <label for="password-con">
-            Confirm Password
-          </label>
+                Confirm Password
+              </label>
+              <span class="invalid-msg"></span>
             </p>
           </fieldset>
           <p class="submit-wrap">
-            <button class="btn">Register!</button>
+            <button class="btn" id="signup-submit">Register!</button>
           </p>
         </form>
       </div>    
     </div>
+  <script src="../js/validator.js"></script>
+  <script src="js/signup.js"></script>
   </body>
 </html>

@@ -6,6 +6,7 @@ html,
 body {
   height: 100%;
 }
+
 body {
   padding: 0;
   margin: 0;
@@ -14,6 +15,7 @@ body {
   font-family: sans-serif;
   color: #f5f5f5;
 }
+
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -34,10 +36,12 @@ body {
   position: static;
   width: auto;
 }
+
 .wrap {
   position: relative;
   height: 100%;
 }
+
 .box {
   max-width: 63rem;
   display: -webkit-box;
@@ -51,14 +55,17 @@ body {
           flex-direction: column;
   box-shadow: 0 0 0 0.5rem #F5F5F5;
 }
+
 .cf:before,
 .cf:after {
   content: " ";
   display: table;
 }
+
 .cf:after {
   clear: both;
 }
+
 .form-header {
   position: relative;
   display: -webkit-box;
@@ -76,27 +83,32 @@ body {
   background-color: #37474F;
   background: url('http://res.cloudinary.com/meowwwls/image/upload/v1462781985/signup-formbg_eb5qxp.jpg') no-repeat center / cover;
 }
+
 .form-body { 
   position: relative;
   padding: 1rem;
   background: #F5F5F5;
   color: #37474F;
 }
+
 .form-header {
   padding: 2rem;
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
+
 h1 {
   margin: 0;
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   letter-spacing: 1px;
 }
+
 .header-text {
   padding: 2rem 3rem;
   border: 1px solid;
 }
+
 .header-p {
   font-family: 'Cutive Mono', 'Courier New';
   font-size: 1rem;
@@ -104,6 +116,7 @@ h1 {
   color: #2b2b2b;
   padding: 1rem;
 }
+
 fieldset {
   max-width: 25rem;
   margin: auto;
@@ -113,12 +126,18 @@ fieldset {
           border-image: linear-gradient(to top, #fee7e4, #EF59FF, #701daf);
   border-image-slice: 1;
 }
+
 legend {
   font-family: 'Playfair Display', serif;
   font-size: 1.4rem;
   font-style: italic;
   color: #573E94;
 }
+
+.input-wrap {
+  position: relative;
+}
+
 label,
 input {
   display: block;
@@ -126,6 +145,7 @@ input {
   max-width: 18rem;
   margin: auto;
 }
+
 input {
   outline: 0;
   height: 2.8125rem;
@@ -138,8 +158,9 @@ input {
   -webkit-transition: box-shadow 0.3s ease-in-out;
   transition: box-shadow 0.3s ease-in-out;
 }
+
 label {
-  padding: 0 0 0.5rem 0.45rem;
+  padding: 0 0 0.5rem 0.55rem;
   background: #573E94;
   color: #fefefe;
   font-family: 'Playfair Display', serif;
@@ -148,11 +169,13 @@ label {
   transition: background 0.2s ease-in-out;
   cursor: pointer;
 }
+
 input:focus {
   background: #37474F;
   color: #fefefe;
   box-shadow: inset 0 0 0 0.3125rem #9C27B0;
 }
+
 input:focus + label {
   background: #9C27B0;
 }
@@ -160,6 +183,7 @@ input:focus + label {
 .submit-wrap {
   text-align: center;
 }
+
 .btn {
   width: 100%;
   max-width: 25rem;
@@ -177,13 +201,56 @@ input:focus + label {
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
 }
+
 .btn:focus,
 .btn:hover {
   background: #573E94;
 }
+
 .btn:active {
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
+}
+
+/* Invalid input styles */
+
+.invalid-msg {
+  position: relative;
+  display: none;
+  max-width: 18rem;
+  padding: 0.5rem 1rem;
+  margin: 0 auto;
+  background: #9C27B0;
+  color: #fefefe;
+  font-family: 'Cutive Mono', 'Courier New';
+}
+
+.invalid-msg::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 0.75rem 1rem;
+  border-color: transparent transparent #9C27B0;
+  right: 1rem;
+  top: -1rem;
+}
+
+.invalid-input label {
+  background: #37474F;
+  color: #eee;
+}
+
+.invalid-input input {
+  box-shadow: inset 0 0 0 0.4375rem #37474F;
+}
+
+.invalid-input input:focus + label {
+  background: #37474F;
+}
+
+.invalid-input input:focus {
+  background: #fefefe;
+  color: currentColor;
 }
 
 @media screen and (min-width: 49rem) {
@@ -195,6 +262,7 @@ input:focus + label {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+
   .form-body, 
   .form-header{
     -webkit-box-flex: 0;
@@ -202,18 +270,21 @@ input:focus + label {
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
   }
+
   .header-text {
     padding: 3rem 3rem;
     border: 0;
   }
+
   h1 {
     font-size: 5rem;
-    /*text-align: left;*/
   }
+
   .header-p {
     width: 80%;
     margin: 1.5rem auto 0;
   }
+
 }
 
 @media screen and (min-width: 49rem) and (min-height: 54rem) {
