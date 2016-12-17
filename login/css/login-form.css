@@ -8,11 +8,45 @@ body {
 }
 
 body {
+  margin: 0;
   min-height: 100vh;
   background: #f4f4f4;
   font-family: 'Roboto Condensed', sans-serif;
   letter-spacing: 0.1em;
   line-height: 1.5;
+}
+
+/* hides content visually but allows screenreaders to access it */
+/* add to all radio and checkbox inputs that are custome styles */
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+  /* 1 */
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: absolute;
+  width: auto;
+  white-space: inherit;
+  opacity: 0;
 }
 
 .colorbar {
@@ -39,7 +73,7 @@ label {
   position: relative;
   height: 100%;
 }
-.container {
+.form-wrap {
   width: 80%;
   max-width: 30rem;
   margin: 2rem auto;
@@ -58,6 +92,7 @@ form {
 .input_wrap {
   position: relative;
   margin: 2em 0 1em;
+  text-align: right; 
 }
 
 
@@ -116,7 +151,6 @@ input:not([type="checkbox"]) + label {
   top: 0;
   left: 0;
   display: block;
-  height: 100%;
   padding-left: 0.75em;
   padding-right: 0.75em;
   color: black;
@@ -133,22 +167,35 @@ input:not([type="checkbox"]) + label {
   font-size: 1.2rem;
 }
 
-input:not([type="checkbox"]):focus,
-input:not([type="checkbox"]):valid {
+input:not([type="checkbox"]):valid,
+.float-label input {
+  padding-left: 0.5em;
+}
+
+input:not([type="checkbox"]):focus {
   padding-left: 0.5em;
   border-color: #222;
 }
 
 input:not([type="checkbox"]):focus + label,
-input:not([type="checkbox"]):valid + label {
+input:not([type="checkbox"]):valid + label,
+.float-label label{
   padding-bottom: 0;
   margin: 0 0 0.5em 0.25em;
   background: white;
   -webkit-transform: translate(0, -50%) scale(0.75);
           transform: translate(0, -50%) scale(0.75);
-
 }
 
+.invalid-input input {
+  box-shadow: 0 0 0 0.1em;
+  color: hsla(0, 83%, 60%, 0.9);
+}
+
+.invalid-input input,
+.invalid-input input:focus {
+  border-color: currentColor;
+}
 /*checkbox and checkbox label styles*/
 
 input[type="checkbox"] {
@@ -167,12 +214,6 @@ input[type="checkbox"] + label {
 input[type="checkbox"] + label {
   position: relative;
   margin-left: 0.5em;
-}
-
-/*hide checkbox but keep it accessible*/
-
-input[type="checkbox"] {
-  opacity: 0;
 }
 
 /*custom checkbox style*/
@@ -248,11 +289,42 @@ input[type="checkbox"]:checked + label::after {
   border-bottom: 1px solid;
 }
 
+/* invalid input styles */
+
+.invalid-msg {
+  display: none;
+  position: relative;
+  max-width: 80%;
+  margin-top: 0.125rem;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background: #f4c1b3;
+  text-align: right;
+}
+
+.invalid-msg::after {
+  content: '';
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-style: solid;
+  border-width: 0 0.75rem 1rem;
+  border-color: transparent transparent #f4c1b3;
+  right: 1rem;
+  top: -1rem;
+}
+
+.invalid-input .invalid-msg {
+  display: inline-block;
+}
+
 @media screen and (max-width: 470px) {
   body {
     background: white;
   }
-  .container {
+  .form-wrap {
     width: 100%;
     padding: 1rem 2rem;
     background: white;
@@ -270,9 +342,7 @@ input[type="checkbox"]:checked + label::after {
     padding-bottom: 0;
     margin: 0 0 0.5em 0.25em;
   }
-  input[type="checkbox"] {
-    display: block;
-  }
+
   input:focus + label {
     font-style: italic;
     font-size: 1rem;
@@ -280,7 +350,7 @@ input[type="checkbox"]:checked + label::after {
 }
 
 @media (min-width: 700px) and (min-height: 700px) {
-  .container {
+  .login-container {
     position: absolute;
     top: 50%;
     left: 50%;
